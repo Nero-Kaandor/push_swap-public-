@@ -1,99 +1,133 @@
-## libft : Votre Propre Bibliothèque C
+# Push_swap
 
-*Ce projet a été créé dans le cadre du programme 42 par VSeker && CAtsin_Kousso*.
----
+*Projet réalisé dans le cadre du programme 42 par VSeker et CAtsin_Kousso.*
 
-### Description du Projet
+## Description du projet
 
-Le projet `push_swap` est un exercice fondamental du cursus 42, visant à créer un **programme** de base en groupe en langage C. Celui-ci permet de trier des listes de differentes manières.
+Le projet `push_swap` est un exercice fondamental du cursus 42, visant à créer un programme en langage C permettant de trier des listes de différentes manières.
 
-#### Objectif
-L'objectif principal est de maîtriser le concept de complexité algorithmique **en groupe**, notamment **par la modification d'algorithmes de bases en fonction de contraintes**
+### Objectif
 
-#### Aperçu
-`push_swap` se compose de 4 ensembles principaux de fonctions :
-1.  **Fonctions de parsing** (par exemple : `parse_flags`, `parse_args`).
-2.  **Fonctions d'operations possibles** (par exemple : `pa`, `pb`).
-3.  **Fonctions d'algorithmes** (par exemple : `simple_sort`, `medium_sort`).
-4.  **Fonctions utiles** (par exemple : `ft_printf`, `ft_strcmp`).
+L'objectif principal est de maîtriser le concept de complexité algorithmique, notamment par la modification d'algorithmes de base en fonction de contraintes.
 
----
+### Aperçu
 
-### Instructions d'Utilisation
+`push_swap` se compose de quatre ensembles principaux de fonctions :
+
+1. **Fonctions de parsing** — `parse_flags`, `parse_args`.
+2. **Fonctions d'opérations possibles** — `pa`, `pb`.
+3. **Fonctions d'algorithmes** — `simple_sort`, `medium_sort`.
+4. **Fonctions utiles** — `ft_printf`, `ft_strcmp`.
+
+## Instructions d'utilisation
 
 Cette section explique comment compiler et utiliser `push_swap`.
 
-#### Clone
-Pour tester le programme seul, executez la commande suivante dans le fichier ou vous souhaitez creer
-le programme :
-`git clone nomdudepotgit`
+### Cloner le dépôt
 
-#### Compilation
-Pour compiler le programme, placez-vous à la racine du dépôt et exécutez la commande `make` :
+Pour tester le programme, clonez le dépôt dans le répertoire de votre choix :
 
-`make`
+```bash
+git clone <URL_DU_DEPOT>
+cd push_swap-public-
+```
 
-Ceci créera le fichier executable nommé push_swap à la racine du dépôt.
+### Compilation
 
-#### Flags et execution
-A l'execution, vous donnerez une liste de nombre a trier en arguments 
-ATTENTION seul votre premier arguments peut etre une liste de nombres
-vous pouvez dans ce cas afficher :
-- par defaut le programme affiches les operations effectuées avec un algo "adaptive".
-- si vous ajoutez le flag (entre l'appel du programme et les arguments) `--bench` le programme affiche un "bench" qui resume en plus l'algorithme et les operations utilisées.
-- si vous ajoutez le flag (entre l'appel du programme et les arguments) `--simple`, `--medium`, `--complex`, `--adaptive` vous forcez l'algorithme de tri utilisé.
+Placez-vous à la racine du dépôt et exécutez :
 
----
+```bash
+make
+```
 
-### Ressources
+Cette commande crée l'exécutable `push_swap` à la racine du dépôt.
 
-Documentation 42 - Sujet libft : Contient Les exigences du programme.
+### Flags et exécution
 
-Utilisation de l'Intelligence Artificielle (IA)
-L'IA n'a pas été utilisée pour générer le code source du programme.
+À l'exécution, fournissez une liste de nombres à trier en arguments.
 
----
+> **Attention :** seul le premier argument peut être une liste de nombres.
 
-### Ordre de fonctionnement et repartition des taches
+Par défaut, le programme affiche les opérations effectuées avec l'algorithme `adaptive`.
 
-Cette section liste les ensembles de taches realisees en détaillant leur but.
+| Flag | Fonction |
+|---|---|
+| `--bench` | Affiche un benchmark résumant notamment l'algorithme et le nombre d'opérations utilisées. |
+| `--simple` | Force l'utilisation de l'algorithme `simple`. |
+| `--medium` | Force l'utilisation de l'algorithme `medium`. |
+| `--complex` | Force l'utilisation de l'algorithme `complex`. |
+| `--adaptive` | Force l'utilisation de l'algorithme `adaptive`. |
 
-#### 1. Parsing et gestion des erreurs (by CAtsin_Kousso revu par VSeker)
-| Fonctions principales | But |
+Exemples :
+
+```bash
+./push_swap 4 67 3 87 23
+./push_swap --bench 4 67 3 87 23
+./push_swap --simple 4 67 3 87 23
+./push_swap --medium 4 67 3 87 23
+./push_swap --complex 4 67 3 87 23
+./push_swap --adaptive 4 67 3 87 23
+```
+
+## Ressources
+
+- **Documentation 42 — Sujet Push_swap :** contient les exigences du projet.
+- **Utilisation de l'intelligence artificielle (IA) :** l'IA n'a pas été utilisée pour générer le code source du programme.
+
+## Ordre de fonctionnement et répartition des tâches
+
+Cette section présente les différents ensembles de tâches réalisées et leur objectif.
+
+### 1. Parsing et gestion des erreurs
+
+**Par CAtsin_Kousso, revu par VSeker**
+
+| Fonction | Rôle |
+|---|---|
 | `parse_flags` | Vérifie l'existence et parse les flags. |
-| `parse_args` | Vérifie l'existence et parse les arguments tout en gerant les erreurs.|
-| `test_args` | Vérifie si le premier argument et que les arguments sont bien des nombre.|
-| `check_duplicates` | Vérifie l'existence de doublon d'arguments.|
-| `args_to_tab` | Mets les valeurs des arguments dans un tableau. |
-| `tab_to_list` | Mets les valeurs du tableau dans une liste et en change les index pour y mettre les index de la liste triee. |
+| `parse_args` | Vérifie l'existence et parse les arguments tout en gérant les erreurs. |
+| `test_args` | Vérifie que les arguments sont bien des nombres. |
+| `check_duplicates` | Vérifie l'existence de doublons parmi les arguments. |
+| `args_to_tab` | Place les valeurs des arguments dans un tableau. |
+| `tab_to_list` | Place les valeurs du tableau dans une liste et leur attribue les index de la liste triée. |
 
-#### 2. Bench et fonctions utiles (by CAtsin_Kousso revu par VSeker)
-| Fonctions principales | But |
-| `bench_count` | Compte les operations au fur et a mesure |
-| `bench_print` | Compte les operations au fur et a mesure |
-| `ft_split` | Pour split les arguments |
-| `ft_isdigit` | Pour verifier que les arguments sont bien des nombre |
-| `ft_atol` | Transforme une chaine de carateres en long int |
+### 2. Bench et fonctions utiles
 
-#### 3. Operations possibles (by VSeker revu par CAtsin_Kousso)
-| Fonctions principales | But |
-| `pa` | Deplace la valeur du dessus de b au dessus de a |
-| `pb` | Deplace la valeur du dessus de a au dessus de b |
-| `rra` | Deplace la valeur du dessous de a au dessus de a |
-| `rrb` | Deplace la valeur du dessous de b au dessus de b |
-| `rrr` | fait simultanement rra et rrb |
-| `ra` | Deplace la valeur du dessus de a au dessous de a |
-| `rb` | Deplace la valeur du dessus de b au dessous de b |
-| `rr` | fait simultanement ra et rb |
-| `sa` | Inverse les deux valeurs du dessus de a |
-| `sb` | Inverse les deux valeurs du dessus de b |
-| `ss` | fait simultanement sa et sb |
+**Par CAtsin_Kousso, revu par VSeker**
 
-#### 4. Algorithmes (by VSeker revu par CAtsin_Kousso)
-| Fonctions principales | But |
-| `simple_sort` | Applique un algo d'ordre simple O(n²) adapté aux contraintes |
-| `medium_sort` | Applique un algo d'ordre medium (O(n√n)) adapté aux contraintes |
-| `complex_sort` | Applique un algo d'ordre complex (O(n log n)) adapté aux contraintes |
-| `adaptive_sort` | Applique les algos precedents en fonction du nombre d'arguments et du desordre |
+| Fonction | Rôle |
+|---|---|
+| `bench_count` | Compte les opérations au fur et à mesure. |
+| `bench_print` | Affiche le résultat du benchmark. |
+| `ft_split` | Permet de séparer les arguments. |
+| `ft_isdigit` | Vérifie que les arguments sont des nombres. |
+| `ft_atol` | Transforme une chaîne de caractères en `long int`. |
 
+### 3. Opérations possibles
 
+**Par VSeker, revu par CAtsin_Kousso**
+
+| Fonction | Rôle |
+|---|---|
+| `pa` | Déplace la valeur du dessus de `b` au-dessus de `a`. |
+| `pb` | Déplace la valeur du dessus de `a` au-dessus de `b`. |
+| `rra` | Déplace la valeur du dessous de `a` au-dessus de `a`. |
+| `rrb` | Déplace la valeur du dessous de `b` au-dessus de `b`. |
+| `rrr` | Effectue simultanément `rra` et `rrb`. |
+| `ra` | Déplace la valeur du dessus de `a` au-dessous de `a`. |
+| `rb` | Déplace la valeur du dessus de `b` au-dessous de `b`. |
+| `rr` | Effectue simultanément `ra` et `rb`. |
+| `sa` | Inverse les deux valeurs du dessus de `a`. |
+| `sb` | Inverse les deux valeurs du dessus de `b`. |
+| `ss` | Effectue simultanément `sa` et `sb`. |
+
+### 4. Algorithmes
+
+**Par VSeker, revu par CAtsin_Kousso**
+
+| Fonction | Rôle |
+|---|---|
+| `simple_sort` | Applique un algorithme d'ordre simple `O(n²)` adapté aux contraintes. |
+| `medium_sort` | Applique un algorithme d'ordre medium `O(n√n)` adapté aux contraintes. |
+| `complex_sort` | Applique un algorithme d'ordre complex `O(n log n)` adapté aux contraintes. |
+| `adaptive_sort` | Sélectionne les algorithmes précédents en fonction du nombre d'arguments et du désordre. |
