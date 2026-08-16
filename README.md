@@ -1,6 +1,6 @@
 # Push_swap
 
-*Projet réalisé dans le cadre du programme 42 par VSeker et CAtsin_Kousso.*
+*Projet réalisé dans le cadre du programme 42 par vseker et catsin-k.*
 
 ## Description du projet
 
